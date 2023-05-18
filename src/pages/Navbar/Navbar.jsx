@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
 // import logo1 from '../../assets/logo-1.svg'
 import logo2 from '../../assets/logo-2.svg'
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Navbar = () => {
+
+  const {user} = useContext(AuthContext);
+
     return (
         <div>
            <div className="navbar bg-base-300">
@@ -32,9 +39,17 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to="/login">
-    <button className='btn btn-primary'>Login</button>
-    </Link>
+    {
+      user ? 
+            <div>
+                <img className="h-10 rounded-full" src={user?.photoURL} title={user?.displayName} />
+                    <Tooltip/>
+              </div> 
+              :
+              <Link to="/login">
+              <button className='btn btn-primary'>Login</button>
+              </Link>
+    }
   </div>
 </div>
         </div>

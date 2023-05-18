@@ -1,15 +1,51 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [error, setError] = useState('');
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || '/'
+
+
+
   const handleLogin = (event) => {
     event.preventDefault();
-    
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
+        setError('')
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            form.reset();
+            console.log(loggedUser);
+            navigate(from);
+        })
+        .catch(error => {
+            console.log(error);
+            setError(error.message)
+        })
   };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+    .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from);
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -57,10 +93,11 @@ const Login = () => {
               </div>
             </form>
             <div className="divider">OR</div>
-            <button className="btn btn-outline text-center">
+            <button onClick={handleGoogleSignIn} className="btn btn-outline text-center">
               Login With Google
             </button>
           </div>
+          <p>{error}</p>
         </div>
       </div>
     </div>

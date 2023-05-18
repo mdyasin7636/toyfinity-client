@@ -1,7 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+
+  const {createUser, updateUserProfile} = useContext(AuthContext);
+  const [error, setError] = useState('');
 
     const handleRegister = event => {
         event.preventDefault();
@@ -11,6 +16,26 @@ const Register = () => {
         const password = form.password.value;
         const photo = form.photo.value;
         console.log(name, email, password, photo);
+
+        createUser(email, password)
+    .then(result => {
+      const createdUser = result.user;
+      updateUserProfile(name, photo)
+        .then(() => {
+          console.log('User profile updated successfully');
+          form.reset();
+        })
+        .catch(error => {
+          console.log('Error updating user profile:', error);
+        });
+      form.reset();
+      console.log(createdUser);
+    })
+    .catch(error => {
+      console.log(error);
+      setError(error.message)
+    })
+
     }
 
     return (
@@ -81,6 +106,7 @@ const Register = () => {
               <button className="btn btn-outline">Register</button>
             </div>
           </form>
+          <p>{error}</p>
           </div>
         </div>
       </div>
