@@ -1,11 +1,20 @@
+// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+// import "react-tabs/style/react-tabs.css";
+
+import ShopByCategory from "./ShopByCategory";
+
 const Home = () => {
   return (
     <div>
       {/* Banner Section */}
+
       <div>
         <div
           className="hero min-h-screen"
-          style={{ backgroundImage: `url("/images/stock/photo-1507358522600-9f71e620c44e.jpg")`,}}>
+          style={{
+            backgroundImage: `url("/images/stock/photo-1507358522600-9f71e620c44e.jpg")`,
+          }}
+        >
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
@@ -19,6 +28,37 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Gallery Section */}
+
+      <div>
+        <h2 className="text-center text-3xl font-bold p-10">
+          Gallery Section Coming Soon...
+        </h2>
+      </div>
+
+      {/* Shop By Category Section */}
+
+      <div>
+        <h2 className="text-5xl font-extrabold text-center">Shop By Category</h2>
+        <ShopByCategory></ShopByCategory>
+      </div>
+
+      {/* Extra Section 1 */}
+
+      <div>
+        <h2 className="text-center text-3xl font-bold p-10">
+          Extra Section 1 Coming Soon...
+        </h2>
+      </div>
+
+      {/* Extra Section 2 */}
+
+      <div>
+        <h2 className="text-center text-3xl font-bold p-10">
+          Extra Section 2 Coming Soon...
+        </h2>
       </div>
     </div>
   );
