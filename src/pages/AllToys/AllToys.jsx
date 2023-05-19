@@ -7,33 +7,27 @@ const AllToys = () => {
     {/* head */}
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        {/* <th></th> */}
+        <th>Seller Name</th>
+        <th>Toy Name</th>
+        <th>Sub-Category</th>
+        <th>Price</th>
+        <th>Available Quantity</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
       {/* row 1 */}
       <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      {/* row 2 */}
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
+        {/* <th>1</th> */}
+        <td>Dicaprio</td>
+        <td>Superman</td>
+        <td>DC</td>
+        <td>$50</td>
+        <td>500</td>
+        <td>
+            <button className="btn btn-primary">View Details</button>
+        </td>
       </tr>
     </tbody>
   </table>
