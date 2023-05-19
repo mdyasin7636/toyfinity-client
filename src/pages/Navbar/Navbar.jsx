@@ -36,13 +36,38 @@ const Navbar = () => {
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <div className="menu menu-horizontal px-1">
+      {/* <div>
+        <button className='btn btn-primary'>Home</button>
+      </div>
+      <div>
+        <button className='btn btn-primary'>All Toys</button>
+      </div>
+      <div>
+        <button className='btn btn-primary'>My Toys</button>
+      </div>
+      <div>
+        <button className='btn btn-primary'>Add A Toy</button>
+      </div>
+      <div>
+        <button className='btn btn-primary'>Blogs</button>
+      </div> */}
+      <Link to="/">
       <li><a>Home</a></li>
+      </Link>
+      <Link to="/allToys">
       <li><a>All Toys</a></li>
+      </Link>
+      <Link to="/myToys">
       <li><a>My Toys</a></li>
+      </Link>
+      <Link to="/addToy">
       <li><a>Add A Toy</a></li>
+      </Link>
+      <Link to="/blog">
       <li><a>Blogs</a></li>
-    </ul>
+      </Link>
+    </div>
   </div>
   <div className="navbar-end">
     {
