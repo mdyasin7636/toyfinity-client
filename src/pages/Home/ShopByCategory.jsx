@@ -4,7 +4,7 @@ import "react-tabs/style/react-tabs.css";
 const ShopByCategory = () => {
   return (
     <div>
-      <Tabs className="text-center mt-5">
+      <Tabs>
         <TabList>
           <Tab>Transformers</Tab>
           <Tab>Marvel</Tab>
