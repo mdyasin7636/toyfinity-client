@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const MyToys = () => {
@@ -15,6 +16,41 @@ const MyToys = () => {
       setToys(data);
     })
   }, [user])
+
+  const handleDelete = id => {
+    const proceed = confirm('Are you sure');
+    if(proceed) {
+      fetch(`http://localhost:5000/myToys/${id}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.deletedCount > 0) {
+          alert('delete done');
+          const remaining = toys.filter(toy => toy._id !== id);
+          setToys(remaining);
+        }
+      })
+    }
+  }
+
+  // const handleUpdate = id => {
+  //   fetch(`http://localhost:5000/myToys/${id}`, {
+  //     method: 'PATCH',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify
+  //   })
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log(data);
+  //     if(data.modifiedCount > 0) {
+
+  //     }
+  //   })
+  // }
 
   return (
     <div>
@@ -42,7 +78,7 @@ const MyToys = () => {
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
+                    <div className="rounded w-20 h-20">
                       <img src={toy.picture} />
                     </div>
                   </div>
@@ -52,10 +88,12 @@ const MyToys = () => {
               <td>{toy.price}</td>
               <td>{toy.quantity}</td>
               <td>
+              <Link to={`/updateToy/${toy._id}`}>
               <button className="btn btn-primary">Update</button>
+              </Link>
               </td>
               <td>
-              <button className="btn btn-primary">Delete</button>
+              <button onClick={() => handleDelete(toy._id)}  className="btn btn-primary">Delete</button>
               </td>
             </tr>)
            }
