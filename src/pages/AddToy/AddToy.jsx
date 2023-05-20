@@ -24,7 +24,7 @@ const AddToy = () => {
     console.log(newToy);
 
     // send data to server
-    fetch('http://localhost:5000/toy', {
+    fetch('http://localhost:5000/addToy', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -150,9 +150,9 @@ const AddToy = () => {
                 <option disabled selected>
                   Select One
                 </option>
-                <option value="dc">DC</option>
-                <option value="marvel">Marvel</option>
-                <option value="transformer">Transformer</option>
+                <option value="DC">DC</option>
+                <option value="Marvel">Marvel</option>
+                <option value="Transformers">Transformers</option>
               </select>
             </div>
           </div>
