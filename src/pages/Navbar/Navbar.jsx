@@ -53,19 +53,23 @@ const Navbar = () => {
         <button className='btn btn-primary'>Blogs</button>
       </div> */}
       <Link to="/">
-      <li><a>Home</a></li>
+      <li><p>Home</p></li>
       </Link>
       <Link to="/allToys">
-      <li><a>All Toys</a></li>
+      <li><p>All Toys</p></li>
       </Link>
-      <Link to="/myToys">
-      <li><a>My Toys</a></li>
-      </Link>
-      <Link to="/addToy">
-      <li><a>Add A Toy</a></li>
-      </Link>
+      {
+        user ? <Link to="/myToys">
+        <li><p>My Toys</p></li>
+        </Link> : ''
+      }
+      {
+        user ? <Link to="/addToy">
+        <li><p>Add A Toy</p></li>
+        </Link> : ''
+      }
       <Link to="/blog">
-      <li><a>Blogs</a></li>
+      <li><p>Blogs</p></li>
       </Link>
     </div>
   </div>
