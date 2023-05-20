@@ -1,9 +1,17 @@
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import "react-tabs/style/react-tabs.css";
 
+import { useEffect } from "react";
 import ShopByCategory from "./ShopByCategory";
 
+
+
 const Home = () => {
+
+  useEffect(() => {
+    
+  }, [])
+
   return (
     <div>
       {/* Banner Section */}

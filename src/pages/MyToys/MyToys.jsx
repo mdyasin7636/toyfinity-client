@@ -1,4 +1,21 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+
+
 const MyToys = () => {
+
+  const {user} = useContext(AuthContext);
+  const [toys, setToys] = useState([])
+
+
+  useEffect( () => {
+    fetch(`http://localhost:5000/mytoys/${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+      setToys(data);
+    })
+  }, [user])
+
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -6,38 +23,42 @@ const MyToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>
-                gg
-              </th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
+              <th>Toy Name</th>
+              <th>Picture</th>
+              <th>Sub-Category</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Update</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
-            <tr>
-              <th>
-                hh
-              </th>
+           {
+            toys.map(toy =>  <tr
+            key={toy._id}
+            >
+              <th>{toy.toy}</th>
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
-                      <img src="https://i.ibb.co/99Cp5q7/person.png" />
+                      <img src={toy.picture} />
                     </div>
                   </div>
                 </div>
               </td>
+              <td>{toy.category}</td>
+              <td>{toy.price}</td>
+              <td>{toy.quantity}</td>
               <td>
-                jj
+              <button className="btn btn-primary">Update</button>
               </td>
-              <td>Purple</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-            </tr>
+              <td>
+              <button className="btn btn-primary">Delete</button>
+              </td>
+            </tr>)
+           }
           </tbody>
         </table>
       </div>
