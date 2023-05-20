@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyToys = () => {
@@ -18,39 +19,33 @@ const MyToys = () => {
   }, [user])
 
   const handleDelete = id => {
-    const proceed = confirm('Are you sure');
-    if(proceed) {
-      fetch(`http://localhost:5000/myToys/${id}`, {
-        method: 'DELETE'
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        if(data.deletedCount > 0) {
-          alert('delete done');
-          const remaining = toys.filter(toy => toy._id !== id);
-          setToys(remaining);
-        }
-      })
-    }
-  }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Coffee has been deleted.", "success");
+              const remaining = toys.filter(toy => toy._id !== id);
+              setToys(remaining);
+            }
+          });
+      }
+    });
+  };
 
-  // const handleUpdate = id => {
-  //   fetch(`http://localhost:5000/myToys/${id}`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify
-  //   })
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     console.log(data);
-  //     if(data.modifiedCount > 0) {
 
-  //     }
-  //   })
-  // }
 
   return (
     <div>
@@ -69,7 +64,7 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
+          
            {
             toys.map(toy =>  <tr
             key={toy._id}
