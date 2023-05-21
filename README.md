@@ -2,15 +2,15 @@
 
 ## Here are 5 Best Features of My Project:
 
-- coming soon...
+- The Navbar is Conditional Based on login, if the user is logged in he/she can add toy.
 
-- coming soon...
+- The logged user can only see the toy he/she added.
 
-- coming soon...
+- The user can update the toy that he/she added.
 
-- coming soon...
+- The user can delete any toy that he/she added.
 
-- coming soon... 
+- In Shop By Category there is view details button it will ask to login first after the user is logged it it will take him to view details page.
 
 
 ## Live Link
