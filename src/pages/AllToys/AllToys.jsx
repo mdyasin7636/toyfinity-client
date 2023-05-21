@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const AllToys = () => {
 
-  const [toys, setToys] = useState([]);
+const [toys, setToys] = useState([]);
 
   useEffect(() => {
     fetch("https://toyfinity-server.vercel.app/alltoys")
@@ -44,7 +45,7 @@ const AllToys = () => {
                 <td>{toy.price}</td>
                 <td>{toy.quantity}</td>
                 <td>
-                  <Link to={`/toy/${toy._id}`}>
+               <Link to={`/toy/${toy._id}`}>
                   <button className="btn btn-primary">View Details</button>
                   </Link>
                 </td>
@@ -60,3 +61,6 @@ const AllToys = () => {
 };
 
 export default AllToys;
+
+
+

@@ -1,15 +1,21 @@
 // import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 // import "react-tabs/style/react-tabs.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ShopByCategory from "./ShopByCategory";
 
 
 
 const Home = () => {
 
+  const [toys, setToys] = useState([]);
+
   useEffect(() => {
-    
+    fetch("https://toyfinity-server.vercel.app/alltoys")
+    .then(res => res.json())
+    .then(data => {
+      setToys(data);
+    })
   }, [])
 
   return (
@@ -50,7 +56,9 @@ const Home = () => {
 
       <div>
         <h2 className="text-5xl font-extrabold text-center">Shop By Category</h2>
-        <ShopByCategory></ShopByCategory>
+        <ShopByCategory
+        toys={toys}
+        ></ShopByCategory>
       </div>
 
       {/* Extra Section 1 */}
