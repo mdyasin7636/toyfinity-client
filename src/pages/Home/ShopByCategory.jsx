@@ -19,7 +19,7 @@ const ShopByCategory = ({ toys }) => {
 
   const handleViewDetails = (_id) => {
     if (!user) {
-      alert("You must log in to view toy details");
+      alert("You Must log in to View Toy Details");
     } 
     navigate(`/toy/${_id}`);
   };

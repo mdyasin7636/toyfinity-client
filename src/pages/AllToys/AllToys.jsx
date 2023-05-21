@@ -7,7 +7,6 @@ const AllToys = () => {
 
 const [toys, setToys] = useState([]);
 useTitle('All Toys')
-// const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetch("https://toyfinity-server.vercel.app/alltoys")
@@ -18,37 +17,8 @@ useTitle('All Toys')
   }, [])
 
 
-  // useEffect(() => {
-  //   const fetchToys = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://toyfinity-server.vercel.app/allToys${searchQuery ? `?search=${searchQuery}` : ""}`
-  //       );
-  //       const data = await response.json();
-  //       setToys(data);
-  //     } catch (error) {
-  //       console.log("Error fetching toys:", error);
-  //     }
-  //   };
-
-  //   fetchToys();
-  // }, [searchQuery]);
-
-  // const handleSearchChange = (e) => {
-  //   setSearchQuery(e.target.value);
-  // };
-
   return (
     <div>
-      <div className="flex justify-center mt-5">
-        <input
-          type="text"
-          placeholder="Search By Toy Name"
-          className="input input-bordered w-full max-w-xs"
-          // value={searchQuery}
-          // onChange={handleSearchChange}
-        />
-      </div>
       <div className="overflow-x-auto px-10 py-10">
         <table className="table w-full">
           {/* head */}
