@@ -36,12 +36,12 @@ const ShopByCategory = ({ toys }) => {
 
         <TabPanel>
           {/* Transformers section */}
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             {transformersToys.map(toy => (
               <div key={toy._id}>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-200 shadow-xl mt-10 mx-auto">
                   <figure>
-                    <img className="w-36" src={toy.picture}/>
+                    <img className="w-36 rounded-2xl mt-4" src={toy.picture}/>
                   </figure>
                   <div className="card-body">
                     <p className="font-bold">{toy.toy}</p>
@@ -59,12 +59,12 @@ const ShopByCategory = ({ toys }) => {
 
         <TabPanel>
           {/* Marvel section */}
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             {marvelToys.map(toy => (
               <div key={toy._id}>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-200 shadow-xl mt-10 mx-auto">
                   <figure>
-                    <img className="w-36" src={toy.picture} />
+                    <img className="w-36 rounded-2xl mt-4" src={toy.picture} />
                   </figure>
                   <div className="card-body">
                     <p className="font-bold">{toy.toy}</p>
@@ -82,12 +82,12 @@ const ShopByCategory = ({ toys }) => {
 
         <TabPanel>
           {/* DC section */}
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-2">
             {dcToys.map(toy => (
               <div key={toy._id}>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-200 shadow-xl mt-10 mx-auto">
                   <figure>
-                    <img className="w-36" src={toy.picture} />
+                    <img className="w-36 rounded-2xl mt-4" src={toy.picture} />
                   </figure>
                   <div className="card-body">
                     <p className="font-bold">{toy.toy}</p>

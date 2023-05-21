@@ -4,7 +4,7 @@ const CustomerReview = () => {
       <div>
         <h2 className="text-center text-5xl font-bold mt-10">Our Customers Loves Us</h2>
         <p className="text-center text-xl font-bold mt-4 mb-20">Your Satisfaction is Our Priority</p>
-        <div className="grid grid-cols-3 gap-5 mx-10">
+        <div className="grid md:grid-cols-3 gap-5 mx-10">
         <div className="flex flex-col items-center">
           <div className="avatar">
             <div className="w-24 rounded-full">
