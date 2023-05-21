@@ -53,23 +53,23 @@ const Navbar = () => {
         <button className='btn btn-primary'>Blogs</button>
       </div> */}
       <Link to="/">
-      <li><p>Home</p></li>
+      <li><p className='font-semibold'>Home</p></li>
       </Link>
       <Link to="/allToys">
-      <li><p>All Toys</p></li>
+      <li><p className='font-semibold'>All Toys</p></li>
       </Link>
       {
         user ? <Link to="/myToys">
-        <li><p>My Toys</p></li>
+        <li><p className='font-semibold'>My Toys</p></li>
         </Link> : ''
       }
       {
         user ? <Link to="/addToy">
-        <li><p>Add A Toy</p></li>
+        <li><p className='font-semibold'>Add A Toy</p></li>
         </Link> : ''
       }
       <Link to="/blog">
-      <li><p>Blogs</p></li>
+      <li><p className='font-semibold'>Blogs</p></li>
       </Link>
     </div>
   </div>
@@ -77,12 +77,12 @@ const Navbar = () => {
     {
       user ? 
             <div>
-                <img className="h-10 rounded-full" src={user?.photoURL} title={user?.displayName} />
+                <img className="w-12 rounded-full" src={user?.photoURL} title={user?.displayName} />
                     <Tooltip/>
               </div> 
               :
               <Link to="/login">
-              <button className='btn btn-primary'>Login</button>
+              <button className='btn'>Login</button>
               </Link>
     }
   </div>

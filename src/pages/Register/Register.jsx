@@ -41,19 +41,15 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
-        <div className="text-center lg:text-left w-1/2">
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+        <div className="text-center lg:text-left w-1/2 mr-20">
+        <img src="https://i.ibb.co/vdMtLMR/sign.jpg" className='rounded-lg'/>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text font-semibold">Name</span>
               </label>
               <input
                 type="text"
@@ -65,7 +61,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text font-semibold">Email</span>
               </label>
               <input
                 type="email"
@@ -77,7 +73,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text font-semibold">Password</span>
               </label>
               <input
                 type="password"
@@ -89,7 +85,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Photo URL</span>
+                <span className="label-text font-semibold">Photo URL</span>
               </label>
               <input
                 type="text"
@@ -98,15 +94,15 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
-               <label className="label">
+               <label className="label font-semibold">
               Already Have an Account? <Link className='link' to="/login">Login</Link>
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-outline">Register</button>
+              <button className="btn">Register</button>
             </div>
           </form>
-          <p>{error}</p>
+          <p className='text-center font-semibold mb-5'>{error}</p>
           </div>
         </div>
       </div>

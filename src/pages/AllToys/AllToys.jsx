@@ -16,18 +16,18 @@ const [toys, setToys] = useState([]);
 
   return (
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto px-10 py-10">
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
               {/* <th></th> */}
-              <th>Seller Name</th>
-              <th>Toy Name</th>
-              <th>Sub-Category</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Details</th>
+              <th className="text-lg">Seller Name</th>
+              <th className="text-lg">Toy Name</th>
+              <th className="text-lg">Sub-Category</th>
+              <th className="text-lg">Price</th>
+              <th className="text-lg">Available Quantity</th>
+              <th className="text-lg">Details</th>
             </tr>
           </thead>
           {
@@ -39,14 +39,14 @@ const [toys, setToys] = useState([]);
               {/* row */}
               <tr>
                 {/* table head */}
-                <td>{toy.name}</td>
-                <td>{toy.toy}</td>
-                <td>{toy.category}</td>
-                <td>{toy.price}</td>
-                <td>{toy.quantity}</td>
-                <td>
+                <td className="font-semibold">{toy.name}</td>
+                <td className="font-semibold">{toy.toy}</td>
+                <td className="font-semibold">{toy.category}</td>
+                <td className="font-semibold">{toy.price}</td>
+                <td className="font-semibold">{toy.quantity}</td>
+                <td className="font-semibold">
                <Link to={`/toy/${toy._id}`}>
-                  <button className="btn btn-primary">View Details</button>
+                  <button className="btn">View Details</button>
                   </Link>
                 </td>
               </tr>

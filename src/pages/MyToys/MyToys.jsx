@@ -54,13 +54,15 @@ const MyToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Toy Name</th>
-              <th>Picture</th>
-              <th>Sub-Category</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Update</th>
-              <th>Delete</th>
+              <th className="text-lg">Toy Name</th>
+              <th className="text-lg">Picture</th>
+              <th className="text-lg">Sub-Category</th>
+              <th className="text-lg">Price</th>
+              <th className="text-lg">Quantity</th>
+              <th className="text-lg">Rating</th>
+              <th className="text-center text-lg">Description</th>
+              <th className="text-center text-lg">Update</th>
+              <th className="text-center text-lg">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -69,7 +71,8 @@ const MyToys = () => {
             toys.map(toy =>  <tr
             key={toy._id}
             >
-              <th>{toy.toy}</th>
+
+              <td className="font-semibold">{toy.toy}</td>
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
@@ -79,16 +82,18 @@ const MyToys = () => {
                   </div>
                 </div>
               </td>
-              <td>{toy.category}</td>
-              <td>{toy.price}</td>
-              <td>{toy.quantity}</td>
+              <td className="font-semibold">{toy.category}</td>
+              <td className="font-semibold">{toy.price}</td>
+              <td className="font-semibold">{toy.quantity}</td>
+              <td className="font-semibold">{toy.rating}</td>
+              <td className="font-semibold">{toy.description.slice(0, 40)}...</td>
               <td>
               <Link to={`/updateToy/${toy._id}`}>
-              <button className="btn btn-primary">Update</button>
+              <button className="btn">Update</button>
               </Link>
               </td>
               <td>
-              <button onClick={() => handleDelete(toy._id)}  className="btn btn-primary">Delete</button>
+              <button onClick={() => handleDelete(toy._id)}  className="btn">Delete</button>
               </td>
             </tr>)
            }

@@ -43,14 +43,13 @@ const UpdateToy = () => {
   };
 
     return (
-        <div className="p-20">
-        {/* <h2 className="text-5xl text-center font-extrabold mb-6">Add Toy</h2> */}
+        <div className="pl-96 mt-10">
         <form onSubmit={updateToy}>
           {/* price and rating row */}
           <div className="md:flex mb-6">
             <div className="form-control md:w-2/4">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text font-semibold">Price</span>
               </label>
               <label className="input-group">
                 <input
@@ -66,7 +65,7 @@ const UpdateToy = () => {
           <div className="md:flex mb-6">
             <div className="form-control md:w-2/4">
               <label className="label">
-                <span className="label-text">Available Quantity</span>
+                <span className="label-text font-semibold">Available Quantity</span>
               </label>
               <label className="input-group">
                 <input
@@ -81,12 +80,12 @@ const UpdateToy = () => {
           {/* detail description */}
           <div className="md:w-2/4">
           <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text font-semibold">Description</span>
               </label>
           <textarea name="description" placeholder="description" className="textarea textarea-bordered textarea-lg w-full" ></textarea>
           </div>
           <div>
-            <input type="submit" value="Update Toy" className="btn btn-primary" />
+            <input type="submit" value="Update Toy" className="btn ml-48 mb-10 mt-5" />
           </div>
         </form>
       </div>
