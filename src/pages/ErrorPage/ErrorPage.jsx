@@ -13,7 +13,7 @@ const ErrorPage = () => {
           </p>
           <Link
             to="/"
-            className="btn border rounded-lg p-4 text-white font-semibold bg-indigo-600"
+            className="btn border rounded-lg p-4 text-white font-semibold"
           >
             Back to homepage
           </Link>

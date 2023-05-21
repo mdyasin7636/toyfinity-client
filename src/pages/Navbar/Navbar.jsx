@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-// import logo1 from '../../assets/logo-1.svg'
-import logo2 from '../../assets/logo-2.svg'
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { useContext } from 'react';
@@ -29,9 +27,10 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <div>
+    <div className='ml-4'>
       <Link>
-      <img src={logo2}/>
+      <img src="https://i.ibb.co/7j4RsKk/infinity-symbol.png" className='w-24' />
+      <p className='font-bold text-2xl'>Toyfinity</p>
       </Link>
     </div>
   </div>

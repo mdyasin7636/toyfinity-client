@@ -49,7 +49,7 @@ const MyToys = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full px-2 py-10">
         <table className="table w-full">
           {/* head */}
           <thead>

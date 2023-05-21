@@ -16,6 +16,9 @@ const [toys, setToys] = useState([]);
 
   return (
     <div>
+      <div  className="flex justify-center mt-5">
+      <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+      </div>
       <div className="overflow-x-auto px-10 py-10">
         <table className="table w-full">
           {/* head */}
