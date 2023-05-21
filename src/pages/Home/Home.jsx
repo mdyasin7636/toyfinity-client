@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import ShopByCategory from "./ShopByCategory";
 import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
+import CustomerReview from "./CustomerReview";
+import Brand from "./Brand";
 
 
 
@@ -58,24 +60,20 @@ const Home = () => {
       {/* Gallery Section */}
 
       <div>
-        <h2 className="text-center text-3xl font-bold p-10"> gallery</h2>
+        <h2 className="text-center text-3xl font-bold mt-10"> gallery</h2>
         <Gallery></Gallery>
       </div>
 
-      {/* Extra Section 1 */}
-
       <div>
-        <h2 className="text-center text-3xl font-bold p-10">
-          Extra Section 1 Coming Soon...
-        </h2>
+
+        <h2 className="text-center text-5xl font-bold mt-10">Our Customers Loves Us</h2>
+        <CustomerReview></CustomerReview>
       </div>
 
-      {/* Extra Section 2 */}
-
       <div>
-        <h2 className="text-center text-3xl font-bold p-10">
-          Extra Section 2 Coming Soon...
-        </h2>
+        <h2 className="text-center text-3xl font-bold mt-10">Powerhouse Partnerships</h2>
+        <p className="text-center font-bold">Top Toy Brands Join Forces with Us for Unmatched Fun</p>
+        <Brand></Brand>
       </div>
     </div>
   );
