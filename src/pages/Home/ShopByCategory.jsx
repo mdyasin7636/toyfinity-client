@@ -13,8 +13,9 @@ const ShopByCategory = () => {
 
         <TabPanel>
             {/* transformers section */}
-          {/* toy 1 */}
+          
           <div className="grid grid-cols-2">
+            {/* toy 1 */}
             <div>
               <div className="card w-96 bg-base-100 shadow-xl">
                 <figure>

@@ -10,6 +10,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import AddToy from "../pages/AddToy/AddToy";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,25 +24,37 @@ const router = createBrowserRouter([
       },
       {
         path: "allToys",
-        element: <AllToys></AllToys>
+        element: <AllToys></AllToys>,
       },
       {
         path: "toy/:id",
-        element: <ToyDetails></ToyDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => fetch(`https://toyfinity-server.vercel.app/toy/${params.id}`),
       },
       {
         path: "myToys",
-        element: <MyToys></MyToys>
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "updateToy/:id",
         element: <UpdateToy></UpdateToy>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+        loader: ({ params }) => fetch(`https://toyfinity-server.vercel.app/toy/${params.id}`),
       },
       {
         path: "addToy",
-        element: <AddToy></AddToy>
+        element: (
+          <PrivateRoute>
+            <AddToy></AddToy>
+          </PrivateRoute>
+        ),
       },
       {
         path: "blog",
