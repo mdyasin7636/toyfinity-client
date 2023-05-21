@@ -1,7 +1,10 @@
 
 const Brand = () => {
     return (
-        <div className="grid grid-cols-5">
+        <div>
+            <h2 className="text-center text-5xl font-bold mt-10">Powerhouse Partnerships</h2>
+        <p className="text-center font-bold mt-6 mb-10">Top Toy Brands Join Forces with Us for Unmatched Fun</p>
+            <div className="grid grid-cols-5 mb-20 ml-14">
             <div className="w-40">
             <img className="mask mask-hexagon-2" src="https://i.ibb.co/Y3DfJ9J/Hasbro.jpg" />
             </div>
@@ -17,6 +20,7 @@ const Brand = () => {
             <div className="w-40">
             <img className="mask mask-hexagon-2" src="https://i.ibb.co/SdJ4XRb/toystars.png" />
             </div>
+        </div>
         </div>
     );
 };

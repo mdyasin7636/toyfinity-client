@@ -26,8 +26,9 @@ const ShopByCategory = ({ toys }) => {
 
   return (
     <div>
+       <h2 className="text-4xl font-bold text-center mt-10 mb-10">Shop By Category</h2>
       <Tabs className="text-center">
-        <TabList>
+        <TabList className="font-bold">
           <Tab>Transformers</Tab>
           <Tab>Marvel</Tab>
           <Tab>DC</Tab>
@@ -43,11 +44,11 @@ const ShopByCategory = ({ toys }) => {
                     <img className="w-36" src={toy.picture}/>
                   </figure>
                   <div className="card-body">
-                    <p>Name: {toy.toy}</p>
-                    <p>Price: ${toy.price}</p>
-                    <p>Rating: {toy.rating}</p>
+                    <p className="font-bold">{toy.toy}</p>
+                    <p className="font-bold">Price: <span className="font-semibold">${toy.price}</span></p>
+                    <p className="font-bold">Rating: <span className="font-semibold">{toy.rating}</span></p>
                     <div className="card-actions justify-center">
-                      <button onClick={() => handleViewDetails(toy._id)} className="btn btn-primary">View Details</button>
+                      <button onClick={() => handleViewDetails(toy._id)} className="btn">View Details</button>
                     </div>
                   </div>
                 </div>
@@ -66,11 +67,11 @@ const ShopByCategory = ({ toys }) => {
                     <img className="w-36" src={toy.picture} />
                   </figure>
                   <div className="card-body">
-                    <p>Name: {toy.toy}</p>
-                    <p>Price: ${toy.price}</p>
-                    <p>Rating: {toy.rating}</p>
+                    <p className="font-bold">{toy.toy}</p>
+                    <p className="font-bold">Price: <span className="font-semibold">${toy.price}</span></p>
+                    <p className="font-bold">Rating: <span className="font-semibold">{toy.rating}</span></p>
                     <div className="card-actions justify-center">
-                      <button onClick={() => handleViewDetails(toy._id)} className="btn btn-primary">View Details</button>
+                      <button onClick={() => handleViewDetails(toy._id)} className="btn">View Details</button>
                     </div>
                   </div>
                 </div>
@@ -89,11 +90,11 @@ const ShopByCategory = ({ toys }) => {
                     <img className="w-36" src={toy.picture} />
                   </figure>
                   <div className="card-body">
-                    <p>Name: {toy.toy}</p>
-                    <p>Price: ${toy.price}</p>
-                    <p>Rating: {toy.rating}</p>
+                    <p className="font-bold">{toy.toy}</p>
+                    <p className="font-bold">Price: <span className="font-semibold">${toy.price}</span></p>
+                    <p className="font-bold">Rating: <span className="font-semibold">{toy.rating}</span></p>
                     <div className="card-actions justify-center">
-                      <button onClick={() => handleViewDetails(toy._id)} className="btn btn-primary">View Details</button>
+                      <button onClick={() => handleViewDetails(toy._id)} className="btn">View Details</button>
                     </div>
                   </div>
                 </div>

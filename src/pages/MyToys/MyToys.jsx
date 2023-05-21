@@ -58,7 +58,7 @@ const MyToys = () => {
               <th className="text-lg">Picture</th>
               <th className="text-lg">Sub-Category</th>
               <th className="text-lg">Price</th>
-              <th className="text-lg">Quantity</th>
+              <th className="text-lg">Available Quantity</th>
               <th className="text-lg">Rating</th>
               <th className="text-center text-lg">Description</th>
               <th className="text-center text-lg">Update</th>
@@ -83,10 +83,10 @@ const MyToys = () => {
                 </div>
               </td>
               <td className="font-semibold">{toy.category}</td>
-              <td className="font-semibold">{toy.price}</td>
+              <td className="font-semibold">${toy.price}</td>
               <td className="font-semibold">{toy.quantity}</td>
               <td className="font-semibold">{toy.rating}</td>
-              <td className="font-semibold">{toy.description.slice(0, 40)}...</td>
+              <td className="font-semibold">{toy.description.slice(0, 30)}...</td>
               <td>
               <Link to={`/updateToy/${toy._id}`}>
               <button className="btn">Update</button>
