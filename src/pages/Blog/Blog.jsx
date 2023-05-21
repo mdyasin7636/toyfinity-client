@@ -1,6 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import useTitle from "../../hooks/useTitle";
+
 const Blog = () => {
+  useTitle('Blog')
   
   return (
     <div>
