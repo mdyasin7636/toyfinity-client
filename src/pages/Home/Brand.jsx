@@ -1,7 +1,11 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 const Brand = () => {
     return (
-        <div>
+        <div data-aos="zoom-in">
             <h2 className="text-center text-5xl font-bold mt-10">Powerhouse Partnerships</h2>
         <p className="text-center font-bold mt-6 mb-10">Top Toy Brands Join Forces with Us for Unmatched Fun</p>
             <div className="grid md:grid-cols-5 mb-20 ml-14">

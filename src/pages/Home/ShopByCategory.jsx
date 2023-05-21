@@ -26,7 +26,8 @@ const ShopByCategory = ({ toys }) => {
 
   return (
     <div>
-       <h2 className="text-4xl font-bold text-center mt-10 mb-10">Shop By Category</h2>
+       <h2 className="text-4xl font-bold text-center mt-10 ">Shop By Category</h2>
+       <p className="text-xl font-semibold text-center mt-4 mb-10">Explore The Superhero Universe</p>
       <Tabs className="text-center">
         <TabList className="font-bold">
           <Tab>Transformers</Tab>
