@@ -89,6 +89,7 @@ const AddToy = () => {
               <input
                 type="text"
                 name="name"
+                readOnly
                 defaultValue={user?.displayName}
                 placeholder="seller name"
                 className="input input-bordered w-full"
@@ -103,6 +104,7 @@ const AddToy = () => {
               <input
                 type="text"
                 name="email"
+                readOnly
                 defaultValue={user?.email}
                 placeholder="email"
                 className="input input-bordered w-full"
