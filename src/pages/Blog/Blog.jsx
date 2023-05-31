@@ -13,7 +13,7 @@ const Blog = () => {
             Q: What is an access token and refresh token? How do they work and where should we store them on the client-side?
           </h1>
           <p className="text-lg font-medium text-gray-700">
-            Ans: Access tokens are used for authentication and grant access to protected resources, while refresh tokens are used to obtain new access tokens when they expire. Access tokens are included in API requests, while refresh tokens are securely stored on the client-side. Access tokens have a limited lifespan, and refresh tokens are long-lived but also expire. On the client-side, access tokens can be stored in HttpOnly cookies or secure storage mechanisms like local storage or session storage, while refresh tokens should not be stored in cookies.
+            Ans: Access tokens are used for authentication and grant access to protected resources, while refresh tokens are used to obtain new access tokens when they expire. Access tokens are included in API requests, while refresh tokens are securely stored on the client-side. Access tokens have a limited lifespan, and refresh tokens are long-lived but also expire. On the client-side, access tokens can be stored in HttpOnly cookies or secure storage mechanisms like local storage or session storage, while refresh tokens should not be stored in cookies
           </p>
         </div>
         <div className="mb-4 border p-4 rounded-md">
