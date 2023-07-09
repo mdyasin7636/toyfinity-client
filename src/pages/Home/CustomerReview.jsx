@@ -3,7 +3,7 @@ const CustomerReview = () => {
     return (
       <div>
         <h2 className="text-center text-5xl font-bold mt-10">Our Customers Loves Us</h2>
-        <p className="text-center text-xl font-bold mt-4 mb-20">Your Satisfaction is Our Priority</p>
+        <p className="text-center text-xl font-bold mt-4 mb-14">Your Satisfaction is Our Priority</p>
         <div className="grid md:grid-cols-3 gap-5 mx-10">
         <div className="flex flex-col items-center">
           <div className="avatar">

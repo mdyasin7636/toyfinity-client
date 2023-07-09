@@ -6,6 +6,7 @@ import CustomerReview from "./CustomerReview";
 import Brand from "./Brand";
 import Banner from "./Banner";
 import useTitle from "../../hooks/useTitle";
+import ContactUs from "../ContactUs/ContactUs";
 
 const Home = () => {
   const [toys, setToys] = useState([]);
@@ -26,6 +27,7 @@ const Home = () => {
       <Gallery></Gallery>
       <CustomerReview></CustomerReview>
       <Brand></Brand>
+      <ContactUs></ContactUs>
     </div>
   );
 };
